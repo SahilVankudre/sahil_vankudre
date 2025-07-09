@@ -2,17 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sahil V | Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Floating nav dot -->
-  <div class="nav-dot"></div>
+  <!-- Vertical Navigation -->
+  <nav class="nav-vertical">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <section class="hero">
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
     <div class="hero-left reveal">
       <h1>Build fast.<br/>Design with clarity.</h1>
       <p>I design and build sleek digital products that feel effortless.</p>
@@ -21,10 +30,68 @@
     <div class="hero-right reveal">
       <div class="hero-card">
         <span class="label">CURRENT FOCUS</span>
-        <h2>Backend Development</h2>
+        <h2>Full Stack Development</h2>
         <p>React | Spring Boot | UI Engineering | Cloud Infra</p>
       </div>
     </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about reveal" id="about">
+    <h2>About Me</h2>
+    <p>
+      Final-year Computer Science student with a strong foundation in backend development, distributed systems, and cloud technologies. Experienced in building scalable Java Spring Boot applications with CI/CD and AWS. Passionate about creating innovative, high-impact software that solves real-world problems—driven by precision, simplicity, and collaboration.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills reveal" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <img src="assets/java-logo.png" alt="Java" />
+        <span>Java</span>
+      </div>
+      <div class="skill-item">
+        <img src="assets/springboot-logo.png" alt="Spring Boot" />
+        <span>Spring Boot</span>
+      </div>
+      <div class="skill-item">
+        <img src="assets/aws-logo.png" alt="AWS" />
+        <span>AWS</span>
+      </div>
+      <div class="skill-item">
+        <img src="assets/docker-logo.png" alt="Docker" />
+        <span>Docker</span>
+      </div>
+      <!-- Add more skills as needed -->
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects reveal" id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>PayLink</h3>
+        <p>Peer-to-peer payment system with Spring Boot & MySQL, featuring secure transactions and PIN verification.</p>
+      </div>
+      <div class="project-card">
+        <h3>MonitorX</h3>
+        <p>Server health monitoring engine that tracks performance and uptime with scheduled checks and logging.</p>
+      </div>
+      <div class="project-card">
+        <h3>BookMyShow Clone</h3>
+        <p>Ticket booking platform with seat maps, show schedules, and user authentication.</p>
+      </div>
+      <!-- Add more projects as needed -->
+    </div>
+  </section>
+
+  <!-- Optional Contact Section Placeholder -->
+  <section class="contact reveal" id="contact">
+    <h2>Contact</h2>
+    <p>Let's build something impactful together. Email me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
   </section>
 
   <script src="scripts.js"></script>

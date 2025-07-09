@@ -1,12 +1,24 @@
-// Scroll-reveal effect
-const reveals = document.querySelectorAll('.reveal');
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.classList.add("visible");
     }
   });
-}, { threshold: 0.1 });
+}, {
+  threshold: 0.1
+});
 
-reveals.forEach(el => observer.observe(el));
+reveals.forEach(reveal => observer.observe(reveal));
