@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* Base setup */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +6,8 @@
 }
 body {
   font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #111;
-  line-height: 1.6;
+  background: #f9f9f9;
+  color: #0e0e0e;
   overflow-x: hidden;
 }
 a {
@@ -16,71 +15,53 @@ a {
   color: inherit;
 }
 
-/* Navbar */
-.nav {
+/* Navigation dot */
+.nav-dot {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+/* Hero Layout */
+.hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
-  position: sticky;
-  top: 0;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid #eee;
-  z-index: 100;
-  transition: all 0.3s ease-in-out;
+  padding: 4rem 8%;
+  min-height: 100vh;
+  gap: 4rem;
 }
-.logo {
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-.nav a {
-  margin-left: 2rem;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-.nav a:hover {
-  color: #0071e3;
-}
-
-/* Hero Section */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 2rem;
-  background: linear-gradient(to bottom, #ffffff, #f6f6f6);
-}
-.hero-card {
-  text-align: center;
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  max-width: 600px;
+.hero-left {
+  flex: 1;
+  transform: translateX(-30px);
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: all 1s ease;
 }
-.hero-card h1 {
+.hero-left.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+.hero-left h1 {
   font-size: 3rem;
   font-weight: 600;
-  color: #000;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
-.hero-card p {
-  font-size: 1.25rem;
+.hero-left p {
+  font-size: 1.2rem;
   color: #444;
   margin-bottom: 2rem;
+  max-width: 400px;
 }
 .btn-primary {
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 999px;
-  background: #000;
+  background: #0e0e0e;
   color: #fff;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -89,23 +70,40 @@ a {
   background: #222;
 }
 
-/* Fade-in Effect */
-.fade-in {
+/* Hero Right Card */
+.hero-right {
+  flex: 1;
+  transform: translateX(30px);
   opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeInTop 1s ease-in-out forwards;
-  animation-delay: 0.2s;
+  transition: all 1s ease;
 }
-
-/* Scroll Reveal Animations */
-.reveal.visible {
+.hero-right.visible {
+  transform: translateX(0);
   opacity: 1;
-  transform: translateY(0);
 }
-
-@keyframes fadeInTop {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+  max-width: 400px;
+}
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-transform: uppercase;
+}
+.hero-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.hero-card p {
+  color: #555;
 }
