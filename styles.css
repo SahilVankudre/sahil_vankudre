@@ -1,4 +1,4 @@
-/* Base styles */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -9,11 +9,14 @@ body {
   background: #ffffff;
   color: #111;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
   color: inherit;
 }
+
+/* Navbar */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -21,11 +24,13 @@ a {
   padding: 1.5rem 3rem;
   position: sticky;
   top: 0;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid #eee;
-  z-index: 10;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
 }
-.nav .logo {
+.logo {
   font-weight: 600;
   font-size: 1.2rem;
 }
@@ -35,28 +40,42 @@ a {
   transition: color 0.3s;
 }
 .nav a:hover {
-  color: #0071e3; /* Apple Blue */
+  color: #0071e3;
 }
 
+/* Hero Section */
 .hero {
-  min-height: 90vh;
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 0 2rem;
-  text-align: center;
+  background: linear-gradient(to bottom, #ffffff, #f6f6f6);
 }
-.hero-text h1 {
+.hero-card {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.hero-card h1 {
   font-size: 3rem;
   font-weight: 600;
   color: #000;
   margin-bottom: 1rem;
 }
-.hero-text p {
+.hero-card p {
   font-size: 1.25rem;
   color: #444;
-  max-width: 600px;
-  margin: 0 auto 2rem;
+  margin-bottom: 2rem;
 }
 .btn-primary {
   padding: 0.75rem 2rem;
@@ -68,4 +87,25 @@ a {
 }
 .btn-primary:hover {
   background: #222;
+}
+
+/* Fade-in Effect */
+.fade-in {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInTop 1s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Scroll Reveal Animations */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
