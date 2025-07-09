@@ -1,2 +1,9 @@
-// Optional: Add animations or console HUD boot logs
-console.log("Initializing HUD...");
+// Optional: Smooth scroll or scroll animations
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
